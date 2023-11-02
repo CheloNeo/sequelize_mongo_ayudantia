@@ -1,56 +1,29 @@
-# 🌐 Proyecto: BD Y WEB, AYUDANTÍA DE CRUD CARRITO COMPRAS
+# 🌐 Proyecto: API Unificada para SQL y NoSQL
 
-Este proyecto está relacionado con la asignatura de base de datos y programación web. Su objetivo es proporcionar recursos y herramientas útiles para los estudiantes que cursan esta materia.
+Este proyecto es una API unificada diseñada para interactuar con bases de datos SQL y NoSQL, facilitando el manejo de operaciones de datos con un modelo de cliente común y una interfaz de programación coherente.
 
 ## Requisitos previos
 
-Para poner en marcha este proyecto, necesitas asegurarte de tener lo siguiente en tu entorno de desarrollo:
+Para ejecutar este proyecto, necesitarás:
 
-- [Node.js](https://nodejs.org/): Asegúrate de tener Node.js instalado en tu computadora.
+- [Node.js](https://nodejs.org/): Entorno de ejecución para JavaScript.
+- [XAMPP](https://www.apachefriends.org/index.html): Para MySQL en un entorno de desarrollo local.
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas): Para alojar la base de datos NoSQL en la nube.
 
-## Librerías utilizadas
+## Instalación de Dependencias
 
-Este proyecto utiliza diversas librerías de Node.js para su funcionamiento. A continuación, se enumeran las principales:
+Este proyecto requiere las siguientes dependencias principales:
 
-- [nodemon](https://www.npmjs.com/package/nodemon): Utilizado para reiniciar automáticamente la aplicación cuando se realizan cambios en el código.
+- `express`: Para la creación del servidor web y manejo de rutas.
+- `sequelize`: ORM para interactuar con MySQL.
+- `mongoose`: ODM para interactuar con MongoDB.
+- `dotenv`: Para manejar variables de entorno.
+- `cors`: Para habilitar CORS.
+- `morgan`: Para el registro de solicitudes HTTP.
+- `mysql2`: Cliente MySQL para Node.js.
+- `nodemon`: Para reiniciar automáticamente el servidor durante el desarrollo.
 
-- [express](https://expressjs.com/): Un marco de aplicación web de Node.js que facilita la creación de API y rutas.
+Para instalar todas las dependencias necesarias, ejecuta el siguiente comando:
 
-- [dotenv](https://www.npmjs.com/package/dotenv): Para cargar variables de entorno desde un archivo `.env`.
-
-- [cors](https://www.npmjs.com/package/cors): Un middleware que permite las solicitudes de otros dominios (útil para el desarrollo de API).
-
-- [morgan](https://www.npmjs.com/package/morgan): Un middleware de registro de solicitudes HTTP para Node.js.
-
-- [mysql2](https://www.npmjs.com/package/mysql2): Un controlador MySQL para Node.js.
-
-- [sequelize](https://www.npmjs.com/package/sequelize): Un ORM para manejar bases de datos relacionales para Node.js.
-
-## Configuración de MySQL
-
-Este proyecto utiliza MySQL como base de datos. Para ejecutar correctamente la aplicación, debes contar con un servidor MySQL funcionando. Se recomienda utilizar [XAMPP](https://www.apachefriends.org/index.html) para configurar un entorno de desarrollo local con MySQL.
-
-Si experimentas problemas al ejecutar MySQL en XAMPP, te recomendamos detener todos los servicios de MySQL en tu máquina, ya que pueden causar conflictos de puertos con XAMPP. 🚧
-
-
-## Cómo ejecutar el proyecto
-
-Para utilizar este proyecto, sigue estos pasos:
-
-1. Descarga o clona el repositorio en tu computadora.
-
-2. Abre una terminal y navega hasta la carpeta del proyecto.
-
-3. Ejecuta el siguiente comando para instalar las dependencias:
-
-   ```bash
-   npm install
-
-4. Ejecutar el siguiente comando para arrancar el proyecto:
-    ```bash   
-   npm run dev
-
-¡Disfruta explorando este proyecto y aprendiendo más sobre base de datos y programación web!
-
-
-
+```bash
+npm install
