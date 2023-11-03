@@ -10,5 +10,8 @@ router.route('/create/:typeBd')
 router.route('/all/:typeBd')
     .get(sqlCliente.listarClientes, noSqlCliente.listarClientes);
 
+router.route('/byId/:typeBd/:idCliente')
+    .get(sqlCliente.listarById, noSqlCliente.listarClientes);
+
 
 export default router;

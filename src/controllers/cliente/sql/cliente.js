@@ -15,11 +15,10 @@ sqlCliente.crearCliente = async ( req, res, next) => {
                 success: true,
                 message: "Cliente creado en sql"
             });
-        }
-
-        else{
-            next();
-        }
+        };
+        
+        next();
+        
     } catch (error) {
         console.log(error)
         return res.status(500).json({
@@ -42,24 +41,52 @@ sqlCliente.listarClientes = async ( req, res, next) => {
                     data,
                     message: "Clientes en sequelize"
                 });
-            }
-            
+            };
+
             return res.status(404).json({
                 success: false,
                 message: "No hay clientes en bd sql"
             });
-        
-        }
+        };
 
-        else{
-            next();
-        }
+        next();
 
     } catch (error) {
         console.log(error)
         return res.status(500).json({
             success: false,
             error
+        });
+    };
+};
+
+sqlCliente.listarById = async (req, res, next) => {
+    try {
+        const { typeBd, idCliente } = req.params;
+
+        if( typeBd === 'sql' ){
+
+            const cliente = await ClienteModel.findByPk( idCliente );
+            
+            if( cliente ){
+                return res.status(200).json({
+                    success: true,
+                    cliente
+                });
+            };
+            return res.status(404).json({
+                success: false,
+                error:"Cliente no encontrado"
+            });
+        };
+
+        next();
+
+    } catch ( error ) {
+        console.log( error );
+        return res.status(404).json({
+            success: false,
+            error:"Cliente no encontrado"
         });
     };
 };

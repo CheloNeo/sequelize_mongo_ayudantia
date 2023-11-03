@@ -47,4 +47,32 @@ noSqlCliente.listarClientes = async ( req, res, next) => {
     };
 };
 
+
+noSqlCliente.listarById = async (req, res, next) => {
+    try {
+        const { idCliente } = req.params;
+
+        const cliente = await ClientesModel.findById( idCliente );
+        
+        if( cliente ){
+            return res.status(200).json({
+                success: true,
+                cliente
+            });
+        };
+
+        return res.status(404).json({
+            success: false,
+            error:"Cliente no encontrado"
+        });
+
+    } catch ( error ) {
+        console.log( error );
+        return res.status(404).json({
+            success: false,
+            error:"Cliente no encontrado"
+        });
+    };
+};
+
 export default noSqlCliente;
