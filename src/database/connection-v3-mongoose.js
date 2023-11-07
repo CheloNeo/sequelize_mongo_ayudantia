@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 import values from '../const/const.js';
 
-mongoose.connect( values.URI_MONGO, {
+const uriMongoLocal = 'mongodb://localhost:27017/miBaseDeDatosLocal'
+
+mongoose.connect( uriMongoLocal, {
 }).catch( error => 
    
     console.log(error) );
